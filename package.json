@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@wix/design-system": "^1.174.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
