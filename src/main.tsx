@@ -1,7 +1,7 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import Page from './page/Page.tsx'
-import './index.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import Page from './page/Page.tsx';
+import './index.css';
 
 /*
  * This in the main entry point to our project
@@ -9,6 +9,6 @@ import './index.css'
  */
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-      <Page />
+    <Page />
   </StrictMode>,
-)
+);

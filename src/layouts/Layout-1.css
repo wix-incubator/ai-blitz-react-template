@@ -1,0 +1,40 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  padding: 30px 0;
+  border: 1px solid black;
+}
+
+/* Main Content Area */
+.content-wrapper {
+  display: flex;
+  margin: 30px 0;
+}
+
+/* Main Content */
+main {
+  flex: 3;
+  padding: 20px;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+/* Sidebar */
+aside {
+  flex: 1;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border: 1px solid black;
+  margin-top: 30px;
+}
