@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Inspiring Text */
+.inspiring-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  text-align: center;
+  padding: 80px 0 30px;
+  position: relative;
+  z-index: 99;
+  color: #2c3e50;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inspiring-text p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Main Content Area */
+.content-wrapper {
+  display: flex;
+  position: relative;
+  margin-top: -100px; /* Creates overlap with the inspiring text */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Main Content */
+main {
+  flex: 3;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 30px;
+  color: white;
+}
+
+.image-overlay h2 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Sidebar */
+aside {
+  flex: 1;
+  padding: 40px 30px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+}
+
+.aside-content {
+  text-align: center;
+}
+
+aside h3 {
+  color: #3498db;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+aside p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.aside-divider {
+  width: 50px;
+  height: 3px;
+  background: #3498db;
+  margin: 15px auto;
+}
+
+.cta-button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+  background: #f1f2f6;
+  border: none;
+  color: #7f8c8d;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-content p:first-child {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.footer-content p:last-child {
+  font-size: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  aside {
+    padding: 30px;
+  }
+
+  .inspiring-text {
+    font-size: 2.5rem;
+  }
+}

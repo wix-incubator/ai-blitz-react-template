@@ -1,0 +1,3 @@
+When generating the page you must follow these rules:
+1. Preserve the layouts elements
+2. The header must overlap the section blow it by at least 20% of the header

@@ -1,0 +1,85 @@
+Create a web page on top of this template, provide a new :
+
+# This is the Page react component, filename: Result-2.tsx:
+import './Result-2.css';
+function Layout() {
+  return (
+    <>
+      <div className="inspiring-text">
+        ## replace content with an Inspiring text of 2 lines, in a cursive font, with no background color ##
+      </div>
+
+      <div className="container">
+        <div className="content-wrapper">
+
+          <aside>
+            <p>Discover innovative solutions crafted for your unique needs.</p>
+          </aside>
+
+          <main>
+            <img src="https://picsum.photos/800/500" alt="Beautiful landscape" style={{ width: '100%', height: 'auto' }} />
+          </main>
+
+          <aside>
+            <p>Our team of experts is ready to bring your vision to life.</p>
+          </aside>
+        </div>
+      </div>
+
+      <footer>
+        <p>Disclaimer: This is a demo page created from a template. Any resemblance to real websites is purely coincidental.</p>
+      </footer>
+    </>
+  );
+}
+export default Layout;
+
+# This is the css file, filename: Result-2.css:
+.container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Inspiring Text */
+.inspiring-text {
+  font-size: 50px;
+  z-index: 99;
+}
+
+/* Main Content Area */
+.content-wrapper {
+  display: flex;
+  margin: -30px 0;
+}
+
+/* Main Content */
+main {
+  flex: 3;
+  padding: 20px;
+  margin-inline: 20px;
+  border: 1px solid black;
+}
+
+/* Sidebar */
+aside {
+  flex: 1;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border: 1px solid black;
+  margin-top: 30px;
+}
+
+# When generating the page you must follow these rules:
+1. Provide 2 files, the react component file, and the css file
+2. Preserve the layouts elements in the react component
+3. Alter the basic CSS to make the site beautiful
+4. The header must overlap the section blow it by at least 50% of the header, do not add any margin-bottom or padding-bottom to it
+5. The section blow must overlap the header above it by at least 50% of the header, do not add any margin-top or padding-top to it
+6. Do not apply any background on the inspiring-text class and it should be on top of everything in terms of z-index
