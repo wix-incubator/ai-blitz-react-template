@@ -1,11 +1,9 @@
 import './App.css'
 
-
-function App() {
-
+function Page() {
   return (
     <div>NOTHING</div>
   )
 }
 
-export default App
+export default Page
