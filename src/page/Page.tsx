@@ -1,11 +1,4 @@
 import './Page.css';
-// import Layout from '../layouts/Layout-1.tsx';
-// import Layout from '../results/Result-1.tsx';
-// import Layout from '../layouts/Layout-2.tsx';
-import Layout from '../results/Result-2.tsx';
-// import Layout from '../layouts/Layout-3.tsx';
-// import Layout from '../layouts/Layout-4.tsx';
-// import Layout from '../layouts/Layout-5.tsx';
 
 /*
  * This is the main page of the project
@@ -14,7 +7,7 @@ import Layout from '../results/Result-2.tsx';
  */
 function Page() {
   return (
-    <Layout />
+    <div>EXAMPLE</div>
   );
 }
 
