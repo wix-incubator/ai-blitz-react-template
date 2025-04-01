@@ -1,40 +1,43 @@
-.container {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
+/* .grid-container should NOT have a background */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
 }
 
-/* Inspiring Text */
-.inspiring-text {
-  font-size: 50px;
-  z-index: 99;
-}
-
-/* Main Content Area */
-.content-wrapper {
+.grid-item {
   display: flex;
-  margin: -30px 0;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
 }
 
-/* Main Content */
-main {
-  flex: 3;
-  padding: 20px;
-  margin-inline: 20px;
-  border: 1px solid black;
+
+/* Top center element that overlaps with middle */
+.top-center {
+  grid-column: 1 / span 3; /* Span all three columns */
+  grid-row: 1;
+  z-index: 2; /* Higher z-index to appear above the middle */
 }
 
-/* Sidebar */
-aside {
-  flex: 1;
-  border: 1px solid black;
-  padding: 20px;
+/* We'll make this element extend downward to overlap with middle */
+.top-center-overlap {
+  position: relative;
+  overflow: visible;
+  height: 200%; /* DO NOT CHANGE */
+  width: 60%; /* DO NOT CHANGE */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  border: 1px solid black;
-  margin-top: 30px;
+.middle {
+  grid-column: 2;
+  grid-row: 2;
+  z-index: 1; /* Lower z-index to be below the top-center overlap */
+}
+
+.bottom-center {
+  grid-column: 1 / span 3; /* Span all three columns */
 }

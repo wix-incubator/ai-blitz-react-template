@@ -2,34 +2,18 @@ import './Layout-2.css';
 
 function Layout() {
   return (
-    <>
-      <div className="inspiring-text">
+    <div className="grid-container">
+      <div className="grid-item top-center top-center-overlap">
         ## replace content with an Inspiring text with no background color ##
       </div>
 
-      <div className="container">
-        <div className="content-wrapper">
+      <div className="grid-item">## replace only one sentence ##</div>
+      <div className="grid-item middle">## replace content with an image ##</div>
+      <div className="grid-item">## replace only one sentence ##</div>
 
-          <aside>
-            ## replace only one sentence ##
-          </aside>
-
-          <main>
-            ## replace content with an image ##
-          </main>
-
-          <aside>
-            ## replace only one sentence ##
-          </aside>
-        </div>
-      </div>
-
-      <footer>
-        ## replace with a disclaimer text ##
-      </footer>
-    </>
-  )
-  ;
+      <div className="grid-item bottom-center">## replace with a disclaimer text ##</div>
+    </div>
+  );
 }
 
 export default Layout;
