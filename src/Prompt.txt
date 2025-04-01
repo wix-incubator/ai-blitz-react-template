@@ -1,76 +1,244 @@
-Create a web page on top of this template, provide a new :
+Generate a CSS grid layout for a website
+rules:
+- Provide 2 files: a react component file representing the structure of the grid, and a css file representing the style of the grid
+- Use as many CSS Grid Capabilities as you can
+- The grid should NOT have content at all
 
-# This is the Page react component, filename: Result-2.tsx:
-import './Result-2.css';
-function Layout() {
-  return (
-    <body>
-      <div className="grid-container">
-        <div className="grid-item top-center top-center-overlap">
-          ## replace content with an Inspiring text with no background color ##
-        </div>
+# CSS Grid Capabilities with Examples
 
-        <div className="grid-item">## replace only one sentence ##</div>
-        <div className="grid-item middle">## replace content with an image ##</div>
-        <div className="grid-item">## replace only one sentence ##</div>
+CSS Grid is a powerful layout system that offers two-dimensional control over web page layouts. Here's a comprehensive list of its capabilities with practical examples:
 
-        <div className="grid-item bottom-center">## replace with a disclaimer text ##</div>
-      </div>
-    </body>
-  );
+## 1. Two-Dimensional Layout Control
+
+CSS Grid allows you to create layouts with both rows and columns simultaneously.
+
+**Example:**
+```css
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 100px auto 100px;
 }
-export default Layout;
+```
 
+## 2. Flexible Track Sizing
 
-# This is the css file, filename: Result-2.css:
-/* .grid-container should NOT have a background */
-.grid-container {
+You can define grid tracks (rows and columns) using various units including pixels, percentages, and the `fr` (fractional) unit.
+
+**Example:**
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* First and third columns take 1 part, middle column takes 2 parts */
+  grid-template-rows: 100px auto;
+}
+```
+
+## 3. Grid Gap/Gutters
+
+Create space between grid items without using margins.
+
+**Example:**
+```css
+.container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 100px);
+  gap: 20px; /* Applies to both rows and columns */
+  /* Alternatively: row-gap: 20px; column-gap: 10px; */
+}
+```
+
+## 4. Named Grid Areas
+
+Define regions within your grid and place items using descriptive names.
+
+**Example:**
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "footer footer footer";
 }
 
-.grid-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+.footer { grid-area: footer; }
+```
+
+## 5. Grid Placement
+
+Position items precisely within a grid using line numbers or named lines.
+
+**Example:**
+```css
+.item1 {
+  grid-column: 1 / 3; /* Start at grid line 1, end at grid line 3 */
+  grid-row: 1 / 2;
 }
 
+.item2 {
+  grid-column: 3; /* Shorthand for 3 / 4 */
+  grid-row: 1 / 3; /* Spans two rows */
+}
+```
 
-/* Top center element that overlaps with middle */
-.top-center {
-  grid-column: 1 / span 3; /* Span all three columns */
-  grid-row: 1;
-  z-index: 2; /* Higher z-index to appear above the middle */
+## 6. Auto-Placement
+
+Let the grid automatically place items in available cells.
+
+**Example:**
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense; /* Fills gaps that would be created by irregularly sized items */
+}
+```
+
+## 7. Responsive Grids with minmax()
+
+Create flexible grids that adapt to different screen sizes.
+
+**Example:**
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* Creates as many 200px+ columns as possible */
+}
+```
+
+## 8. Content-Based Sizing
+
+Let the content determine the size of a track using `auto` and `min-content`/`max-content`.
+
+**Example:**
+```css
+.container {
+  display: grid;
+  grid-template-columns: min-content 1fr max-content;
+  /* First column is as small as possible, middle takes remaining space, last is as large as needed */
+}
+```
+
+## 9. Grid Alignment
+
+Control the alignment of grid items within their cells.
+
+**Example:**
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; /* Horizontal alignment */
+  align-items: center; /* Vertical alignment */
 }
 
-/* We'll make this element extend downward to overlap with middle */
-.top-center-overlap {
-  position: relative;
-  overflow: visible;
-  height: 200%; /* DO NOT CHANGE */
-  width: 60%; /* DO NOT CHANGE */
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+.item {
+  /* Individual item alignment */
+  justify-self: start;
+  align-self: end;
+}
+```
+
+## 10. Nested Grids
+
+Create complex layouts by nesting grids within grid items.
+
+**Example:**
+```css
+.parent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.middle {
-  grid-column: 2;
-  grid-row: 2;
-  z-index: 1; /* Lower z-index to be below the top-center overlap */
+.child-grid {
+  grid-column: 2 / 4;
+  display: grid; /* Creates a nested grid */
+  grid-template-columns: repeat(2, 1fr);
+}
+```
+
+## 11. Overlapping Elements
+
+Place multiple items in the same grid area to create layered designs.
+
+**Example:**
+```css
+.background {
+  grid-column: 1 / 4;
+  grid-row: 1 / 3;
 }
 
-.bottom-center {
-  grid-column: 1 / span 3; /* Span all three columns */
+.foreground {
+  grid-column: 1 / 4;
+  grid-row: 1 / 3;
+  z-index: 1; /* Brings element forward */
+}
+```
+
+## 12. Dynamic Track Creation with auto-fill and auto-fit
+
+Create responsive layouts that adapt to available space.
+
+**Example:**
+```css
+/* auto-fill: creates as many tracks as possible */
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
-# When generating the page you must follow these rules:
-1. Provide 2 files, the react component file, and the css file
-2. Preserve the layouts elements in the react component
-3. Alter the basic CSS to make the site beautiful with a background
-4. The header must overlap the section blow it by at least 50% of the header, do not add any margin-bottom or padding-bottom to it
-5. The section blow must overlap the header above it by at least 50% of the header, do not add any margin-top or padding-top to it
-6. Do not apply any background on the inspiring-text class and it should be on top of everything in terms of z-index
+/* auto-fit: collapses empty tracks */
+.container2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+```
+
+## 13. Subgrid (Modern Browsers)
+
+Allow nested grids to inherit the track sizes of their parent grid.
+
+**Example:**
+```css
+.parent {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.child {
+  grid-column: 2 / 7;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+```
+
+## 14. Masonry-Like Layouts
+
+Create Pinterest-style layouts with items of varying heights.
+
+**Example:**
+```css
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 20px;
+  grid-auto-flow: dense;
+}
+
+.gallery-item {
+  grid-row: span 10; /* Default height */
+}
+
+.gallery-item.tall {
+  grid-row: span 20; /* Taller item */
+}
+```
+
+CSS Grid has transformed web layout design, allowing for complex, responsive layouts that were previously difficult to achieve with other CSS techniques. It works especially well in combination with Flexbox, where Grid handles the overall page layout and Flexbox manages the arrangement of elements within individual grid areas.

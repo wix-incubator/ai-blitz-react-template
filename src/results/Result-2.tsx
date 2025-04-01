@@ -1,28 +1,28 @@
 import './Result-2.css';
 
-function Layout() {
+const GridLayout = () => {
   return (
-      <body>
       <div className="grid-container">
-        <div className="grid-item top-center top-center-overlap">
-          <h1 className="inspiring-text">Discover the world not as it is, but as you are</h1>
-        </div>
+        {/* Base layer elements */}
+        <div className="base-layer layer-1"></div>
+        <div className="base-layer layer-2"></div>
+        <div className="base-layer layer-3"></div>
 
-        <div className="grid-item">Journey beyond the familiar</div>
-        <div className="grid-item middle">
-          <img
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
-              alt="Majestic mountain landscape"
-              className="feature-image"
-          />
-        </div>
-        <div className="grid-item">Embrace the unknown path</div>
+        {/* Overlapping card elements */}
+        <div className="card card-1"></div>
+        <div className="card card-2"></div>
+        <div className="card card-3"></div>
+        <div className="card card-4"></div>
+        <div className="card card-5"></div>
 
-        <div className="grid-item bottom-center">
-          <p className="disclaimer">All adventures should be undertaken responsibly. Respect nature, local cultures, and travel safely.</p>
-        </div>
+        {/* Floating elements that overlap multiple grid areas */}
+        <div className="floating floating-1"></div>
+        <div className="floating floating-2"></div>
+
+        {/* Footer area */}
+        <footer className="footer"></footer>
       </div>
-      </body>
   );
-}
-export default Layout;
+};
+
+export default GridLayout;
